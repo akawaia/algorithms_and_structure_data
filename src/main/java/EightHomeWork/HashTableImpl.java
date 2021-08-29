@@ -79,7 +79,7 @@ public class HashTableImpl<K, V> implements HashTable<K, V> {
             if (isKeysEqual(data[index], key)) {
                 data[index].setValue(value);
             }
-            if (count > data.length * 2) {
+            if (data[index] != null) {
                 if (data[index].getNextItem() == null) {
                     data[index].setNextItem(new Item<>(key, value));
                     data[index].setItemInList(data[index].getNextItem());
